@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="description" content="Discover the hidden meanings behind 11:11, 22:22, 333, 444 and other angel numbers. Download the free Angel Number Awakening Guide." />
+  <title>Angel Number Awakening — Free Guide</title>
+
+  <!-- Google Fonts — self-contained via embed -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* =============================================
+       TOKENS
+    ============================================= */
+    :root {
+      --bg:        #080808;
+      --bg2:       #0d0d0d;
+      --bg3:       #111111;
+      --line:      rgba(255,255,255,0.07);
+      --line2:     rgba(255,255,255,0.12);
+      --dim:       #333333;
+      --mid:       #666666;
+      --silver:    #aaaaaa;
+      --light:     #cccccc;
+      --white:     #f2f2f2;
+      --pure:      #ffffff;
+      --gap:       28px;
+      --max:       560px;
+    }
+
+    /* =============================================
+       RESET
+    ============================================= */
+    *, *::before, *::after {
+      margin: 0; padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--silver);
+      font-family: 'Jost', sans-serif;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    /* =============================================
+       LAYOUT HELPERS
+    ============================================= */
+    .shell {
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section {
+      padding: 88px 0;
+    }
+
+    .section--alt {
+      background: var(--bg2);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    /* =============================================
+       TYPOGRAPHY
+    ============================================= */
+    .display {
+      font-family: 'Cormorant', Georgia, serif;
+      color: var(--white);
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+    }
+
+    .display--xl  { font-size: clamp(42px, 10vw, 68px); font-weight: 700; }
+    .display--lg  { font-size: clamp(30px, 7vw, 46px);  font-weight: 600; }
+    .display--md  { font-size: clamp(24px, 5.5vw, 36px); font-weight: 600; }
+
+    .eyebrow {
+      font-family: 'Jost', sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--dim);
+    }
+
+    .body-text {
+      font-size: clamp(15px, 4vw, 17px);
+      line-height: 1.8;
+      color: var(--silver);
+    }
+
+    .body-text + .body-text,
+    p + p { margin-top: 1.1em; }
+
+    em { font-style: italic; color: var(--light); }
+    strong { font-weight: 500; color: var(--light); }
+
+    /* =============================================
+       UTILITY: STAGGER REVEAL
+    ============================================= */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .d1 { transition-delay: 0.08s; }
+    .d2 { transition-delay: 0.16s; }
+    .d3 { transition-delay: 0.24s; }
+    .d4 { transition-delay: 0.32s; }
+    .d5 { transition-delay: 0.40s; }
+
+    /* =============================================
+       HORIZONTAL RULE
+    ============================================= */
+    .hr {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--line2), transparent);
+      margin: 52px 0;
+    }
+    .hr--sm { margin: 36px 0; }
+
+    /* =============================================
+       HERO
+    ============================================= */
+    #hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 100px 24px 80px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    /* Atmospheric glow */
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: -10%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255,255,255,0.025) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    /* Grid texture */
+    #hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 40px 40px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 80%);
+      pointer-events: none;
+      opacity: 0.4;
+    }
+
+    .hero__inner {
+      position: relative;
+      z-index: 2;
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    .hero__numbers {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+
+    .hero__num {
+      font-family: 'Cormorant', serif;
+      font-size: 13px;
+      font-style: italic;
+      color: var(--dim);
+      letter-spacing: 0.05em;
+      animation: numPulse 4s ease-in-out infinite;
+    }
+    .hero__num:nth-child(2) { animation-delay: 1s; }
+    .hero__num:nth-child(3) { animation-delay: 2s; }
+    .hero__num:nth-child(4) { animation-delay: 3s; }
+
+    @keyframes numPulse {
+      0%, 100% { color: var(--dim); }
+      50% { color: var(--mid); }
+    }
+
+    .hero__headline {
+      margin-bottom: 24px;
+      animation: heroIn 1s 0.2s both;
+    }
+
+    .hero__sub {
+      font-size: clamp(16px, 4.5vw, 19px);
+      color: var(--mid);
+      max-width: 400px;
+      margin: 0 auto 44px;
+      font-weight: 300;
+      line-height: 1.7;
+      animation: heroIn 1s 0.45s both;
+    }
+    .hero__sub em { color: var(--silver); }
+
+    @keyframes heroIn {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero__cta-wrap {
+      animation: heroIn 1s 0.65s both;
+    }
+
+    /* Scroll hint */
+    .hero__scroll {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      z-index: 2;
+      animation: heroIn 1s 1.2s both;
+    }
+    .hero__scroll span {
+      font-size: 9px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--dim);
+    }
+    .hero__scroll-line {
+      width: 1px;
+      height: 36px;
+      background: linear-gradient(to bottom, var(--dim), transparent);
+      animation: scrollDrop 1.8s ease-in-out infinite;
+    }
+    @keyframes scrollDrop {
+      0%   { transform: scaleY(0); transform-origin: top; opacity: 0; }
+      40%  { transform: scaleY(1); transform-origin: top; opacity: 1; }
+      60%  { transform: scaleY(1); transform-origin: bottom; opacity: 1; }
+      100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
+    }
+
+    /* =============================================
+       BUTTONS
+    ============================================= */
+    .btn {
+      display: inline-block;
+      width: 100%;
+      max-width: 360px;
+      padding: 17px 28px;
+      background: var(--white);
+      color: var(--bg);
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+      -webkit-appearance: none;
+      border-radius: 0;
+    }
+    .btn:hover {
+      background: var(--pure);
+      box-shadow: 0 6px 32px rgba(255,255,255,0.1);
+      transform: translateY(-1px);
+    }
+    .btn:active { transform: translateY(0); }
+
+    .btn--ghost {
+      background: transparent;
+      color: var(--silver);
+      border: 1px solid var(--dim);
+    }
+    .btn--ghost:hover {
+      background: transparent;
+      border-color: var(--mid);
+      color: var(--light);
+      box-shadow: none;
+    }
+
+    .btn-note {
+      margin-top: 12px;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      color: var(--dim);
+      text-align: center;
+    }
+
+    /* =============================================
+       WHY SECTION
+    ============================================= */
+    #why {
+      text-align: center;
+    }
+
+    .why__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      margin: 48px 0;
+    }
+
+    .why__cell {
+      background: var(--bg);
+      padding: 28px 16px;
+      text-align: center;
+    }
+    .section--alt .why__cell { background: var(--bg2); }
+
+    .why__cell-num {
+      display: block;
+      font-family: 'Cormorant', serif;
+      font-size: clamp(22px, 6vw, 30px);
+      font-style: italic;
+      color: var(--white);
+      margin-bottom: 6px;
+      line-height: 1;
+    }
+    .why__cell-label {
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--dim);
+    }
+
+    /* =============================================
+       GUIDE / BULLETS
+    ============================================= */
+    #guide {
+      text-align: left;
+    }
+    #guide .section-header {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+
+    .guide-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .guide-item {
+      display: grid;
+      grid-template-columns: 20px 1fr;
+      column-gap: 22px;
+      align-items: baseline;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .guide-item:first-child { border-top: 1px solid var(--line); }
+
+    .guide-item__n {
+      font-family: 'Cormorant', serif;
+      font-size: 12px;
+      font-style: italic;
+      color: var(--dim);
+      user-select: none;
+      padding-top: 2px;
+    }
+
+    .guide-item__text {
+      font-size: clamp(14px, 3.8vw, 16px);
+      color: var(--silver);
+      line-height: 1.7;
+    }
+    .guide-item__text strong { color: var(--light); font-weight: 500; }
+
+    /* =============================================
+       EMOTIONAL BLOCK
+    ============================================= */
+    .quote-block {
+      border-left: 1px solid var(--line2);
+      padding: 28px 24px;
+      margin: 48px 0;
+    }
+    .quote-block p {
+      font-family: 'Cormorant', serif;
+      font-size: clamp(20px, 5.5vw, 28px);
+      font-style: italic;
+      color: var(--white);
+      line-height: 1.45;
+      font-weight: 300;
+    }
+
+    /* =============================================
+       EMAIL FORM / CTA SECTION
+    ============================================= */
+    #download {
+      text-align: center;
+    }
+
+    .form-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      max-width: 360px;
+      margin: 40px auto 0;
+    }
+
+    .form-input {
+      width: 100%;
+      background: transparent;
+      border: 1px solid var(--dim);
+      color: var(--white);
+      font-family: 'Jost', sans-serif;
+      font-size: 15px;
+      font-weight: 300;
+      padding: 14px 16px;
+      outline: none;
+      transition: border-color 0.25s;
+      -webkit-appearance: none;
+      border-radius: 0;
+    }
+    .form-input::placeholder { color: var(--dim); }
+    .form-input:focus { border-color: var(--mid); }
+
+    .form-input.error { border-color: #666; }
+
+    .success-state {
+      display: none;
+      padding: 28px 0;
+    }
+    .success-state p {
+      font-family: 'Cormorant', serif;
+      font-style: italic;
+      font-size: clamp(18px, 5vw, 22px);
+      color: var(--light);
+      line-height: 1.5;
+    }
+
+    /* =============================================
+       FAQ
+    ============================================= */
+    #faq { text-align: left; }
+    #faq .section-header { text-align: center; margin-bottom: 48px; }
+
+    .faq-item {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .faq-trigger {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 22px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .faq-trigger__q {
+      font-family: 'Cormorant', serif;
+      font-size: clamp(16px, 4.2vw, 19px);
+      color: var(--light);
+      font-weight: 400;
+      line-height: 1.35;
+      flex: 1;
+    }
+
+    .faq-trigger__icon {
+      flex-shrink: 0;
+      margin-top: 3px;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--dim);
+      color: var(--mid);
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1;
+      transition: transform 0.3s, border-color 0.3s, color 0.3s;
+      font-family: 'Jost', sans-serif;
+    }
+    .faq-item.open .faq-trigger__icon {
+      transform: rotate(45deg);
+      border-color: var(--mid);
+      color: var(--silver);
+    }
+
+    .faq-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.38s ease;
+    }
+    .faq-item.open .faq-body { max-height: 500px; }
+
+    .faq-answer {
+      padding: 0 0 24px;
+      font-size: clamp(14px, 3.8vw, 16px);
+      color: var(--mid);
+      line-height: 1.8;
+    }
+
+    /* =============================================
+       FINAL SECTION
+    ============================================= */
+    #final {
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    #final::before {
+      content: '11:11';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Cormorant', serif;
+      font-size: clamp(120px, 36vw, 280px);
+      font-style: italic;
+      font-weight: 700;
+      color: rgba(255,255,255,0.018);
+      pointer-events: none;
+      white-space: nowrap;
+      letter-spacing: -6px;
+    }
+
+    .final__inner {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 40px 24px;
+      text-align: center;
+    }
+    footer .mark {
+      font-family: 'Cormorant', serif;
+      font-size: 13px;
+      font-style: italic;
+      letter-spacing: 0.2em;
+      color: var(--dim);
+      margin-bottom: 16px;
+    }
+    footer p {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: var(--dim);
+      line-height: 1.9;
+    }
+    footer a {
+      color: var(--dim);
+      text-decoration: none;
+    }
+    footer a:hover { color: var(--mid); }
+
+    /* =============================================
+       SECTION HEADER UTILITY
+    ============================================= */
+    .section-header {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .section-header .eyebrow { margin-bottom: 0; }
+
+    /* =============================================
+       SPACING BETWEEN SECTIONS / VISUAL RHYTHM
+    ============================================= */
+    @media (max-width: 480px) {
+      .section { padding: 72px 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ╔══════════════════════════════════════╗
+     ║  HERO                               ║
+     ╚══════════════════════════════════════╝ -->
+<section id="hero">
+  <div class="hero__inner">
+
+    <div class="hero__numbers" aria-hidden="true">
+      <span class="hero__num">11:11</span>
+      <span class="hero__num">22:22</span>
+      <span class="hero__num">333</span>
+      <span class="hero__num">444</span>
+    </div>
+
+    <h1 class="display display--xl hero__headline">
+      The Universe Has Been<br>Trying to Tell You<br>Something.
+    </h1>
+
+    <p class="hero__sub">
+      You keep seeing the same numbers.<br>
+      <em>It's not a coincidence.</em><br>
+      It never was.
+    </p>
+
+    <div class="hero__cta-wrap">
+      <a href="#download" class="btn">Decode My Numbers — Free</a>
+      <p class="btn-note">Free guide · No credit card · Instant download</p>
+    </div>
+
+  </div>
+
+  <div class="hero__scroll" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="hero__scroll-line"></div>
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════╗
+     ║  WHY YOU SEE ANGEL NUMBERS          ║
+     ╚══════════════════════════════════════╝ -->
+<section id="why" class="section">
+  <div class="shell">
+
+    <div class="section-header reveal">
+      <span class="eyebrow">The Hidden Language</span>
+      <h2 class="display display--lg">You're Not<br>Imagining It.</h2>
+    </div>
+
+    <div class="why__grid reveal d1" aria-label="Angel number meanings">
+      <div class="why__cell">
+        <span class="why__cell-num">11:11</span>
+        <span class="why__cell-label">Awakening</span>
+      </div>
+      <div class="why__cell">
+        <span class="why__cell-num">22:22</span>
+        <span class="why__cell-label">Alignment</span>
+      </div>
+      <div class="why__cell">
+        <span class="why__cell-num">333</span>
+        <span class="why__cell-label">Expansion</span>
+      </div>
+      <div class="why__cell">
+        <span class="why__cell-num">444</span>
+        <span class="why__cell-label">Protection</span>
+      </div>
+    </div>
+
+    <p class="body-text reveal d2">
+      For over 2,500 years — across ancient Egypt, Greece, and the Vedic traditions — numbers were understood as the <strong>architecture of reality itself.</strong>
+    </p>
+    <p class="body-text reveal d3">
+      When you notice the same sequence again and again, your consciousness is recognising a signal it was always meant to receive.
+    </p>
+    <p class="body-text reveal d4">
+      The universe communicates through pattern. Numbers are its most precise language. And right now — <em>it's speaking directly to you.</em>
+    </p>
+
+    <div class="hr reveal d5"></div>
+
+    <div class="quote-block reveal">
+      <p>"The question is not whether you are receiving a message. The question is — do you know what it means?"</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════╗
+     ║  WHAT'S IN THE GUIDE                ║
+     ╚══════════════════════════════════════╝ -->
+<section id="guide" class="section section--alt">
+  <div class="shell">
+
+    <div class="section-header reveal">
+      <span class="eyebrow">The Free Guide</span>
+      <h2 class="display display--lg">What You'll<br>Discover Inside.</h2>
+      <p class="body-text">
+        The <em>Angel Number Awakening Guide</em> gives you the complete decoder — every major sequence, what it means for your life right now, and what to do when you see it.
+      </p>
+    </div>
+
+    <ul class="guide-list" role="list">
+
+      <li class="guide-item reveal">
+        <span class="guide-item__n" aria-hidden="true">01</span>
+        <span class="guide-item__text"><strong>The true meaning of 11:11</strong> — why it's called the Awakening Portal and the specific message it carries for where you are right now</span>
+      </li>
+
+      <li class="guide-item reveal d1">
+        <span class="guide-item__n" aria-hidden="true">02</span>
+        <span class="guide-item__text"><strong>22:22 decoded</strong> — the Master Builder frequency and why seeing it means your manifestations are already taking physical form</span>
+      </li>
+
+      <li class="guide-item reveal d2">
+        <span class="guide-item__n" aria-hidden="true">03</span>
+        <span class="guide-item__text"><strong>The complete number map</strong> — every sequence from 111 through 999, with its meaning, its energy, and what to do when you see it</span>
+      </li>
+
+      <li class="guide-item reveal d3">
+        <span class="guide-item__n" aria-hidden="true">04</span>
+        <span class="guide-item__text"><strong>Why you started seeing numbers now</strong> — what's shifting in your life, your energy, and your path that triggered this awakening</span>
+      </li>
+
+      <li class="guide-item reveal d4">
+        <span class="guide-item__n" aria-hidden="true">05</span>
+        <span class="guide-item__text"><strong>The 60-second respond ritual</strong> — what to do the moment you see a sign to amplify the message and open the channel for more guidance</span>
+      </li>
+
+      <li class="guide-item reveal">
+        <span class="guide-item__n" aria-hidden="true">06</span>
+        <span class="guide-item__text"><strong>Warning, confirmation, or invitation?</strong> — how to tell exactly what the universe is communicating so you can act with clarity, not confusion</span>
+      </li>
+
+      <li class="guide-item reveal d1">
+        <span class="guide-item__n" aria-hidden="true">07</span>
+        <span class="guide-item__text"><strong>The 3 rarest sequences</strong> — and what it means if they've appeared in your life (most people never receive these in their lifetime)</span>
+      </li>
+
+      <li class="guide-item reveal d2">
+        <span class="guide-item__n" aria-hidden="true">08</span>
+        <span class="guide-item__text"><strong>Your personal number blueprint</strong> — how your birth date creates a unique relationship with specific angel numbers that only appear for you</span>
+      </li>
+
+    </ul>
+
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════╗
+     ║  CALL TO ACTION / EMAIL FORM        ║
+     ╚══════════════════════════════════════╝ -->
+<section id="download" class="section">
+  <div class="shell">
+
+    <div class="section-header reveal" style="text-align:center; align-items:center;">
+      <span class="eyebrow">Free Instant Download</span>
+      <h2 class="display display--lg">Get the Guide<br>Right Now.</h2>
+      <p class="body-text" style="max-width:380px; margin:0 auto;">
+        Enter your name and email below. Your guide arrives in your inbox within seconds — completely free, no strings attached.
+      </p>
+    </div>
+
+    <div id="form-container">
+      <div class="form-wrap reveal d2">
+        <input
+          class="form-input"
+          type="text"
+          id="inp-name"
+          placeholder="Your first name"
+          autocomplete="given-name"
+        />
+        <input
+          class="form-input"
+          type="email"
+          id="inp-email"
+          placeholder="Your email address"
+          autocomplete="email"
+          inputmode="email"
+        />
+        <button class="btn" onclick="handleSubmit()">
+          Send Me the Free Guide
+        </button>
+      </div>
+      <p class="btn-note reveal d3" style="max-width:360px; margin:12px auto 0;">
+        Your information is private. We never share or sell it.
+      </p>
+    </div>
+
+    <div class="success-state" id="success" role="alert" aria-live="polite">
+      <p>Your guide is on its way.<br><em>Check your inbox.</em></p>
+    </div>
+
+    <div class="hr reveal" style="margin-top:60px;"></div>
+
+    <!-- Trust row -->
+    <div class="reveal" style="display:flex; flex-wrap:wrap; justify-content:center; gap:32px; text-align:center;">
+      <div>
+        <div class="eyebrow" style="margin-bottom:6px;">Always Free</div>
+        <p style="font-size:13px; color:var(--dim);">No card needed</p>
+      </div>
+      <div>
+        <div class="eyebrow" style="margin-bottom:6px;">Instant</div>
+        <p style="font-size:13px; color:var(--dim);">Arrives in seconds</p>
+      </div>
+      <div>
+        <div class="eyebrow" style="margin-bottom:6px;">Private</div>
+        <p style="font-size:13px; color:var(--dim);">Never shared</p>
+      </div>
+      <div>
+        <div class="eyebrow" style="margin-bottom:6px;">Yours Forever</div>
+        <p style="font-size:13px; color:var(--dim);">Download &amp; keep</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════╗
+     ║  FAQ                                ║
+     ╚══════════════════════════════════════╝ -->
+<section id="faq" class="section section--alt">
+  <div class="shell">
+
+    <div class="section-header reveal">
+      <span class="eyebrow">Questions</span>
+      <h2 class="display display--md">Frequently Asked.</h2>
+    </div>
+
+    <div role="list">
+
+      <div class="faq-item reveal" role="listitem">
+        <button class="faq-trigger" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="faq-trigger__q">Is this actually free? What's the catch?</span>
+          <span class="faq-trigger__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-body" role="region">
+          <p class="faq-answer">Completely free. No credit card, no trial, no hidden subscription. We ask only for your email to deliver the guide and occasionally share spiritual insights with you. You can unsubscribe at any time with one click.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal d1" role="listitem">
+        <button class="faq-trigger" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="faq-trigger__q">I'm new to this. Will the guide make sense to me?</span>
+          <span class="faq-trigger__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-body" role="region">
+          <p class="faq-answer">Absolutely. The guide was written for people who are just beginning to notice numbers, all the way through to those who have been on a spiritual path for years. Everything is explained clearly from first principles — no prior knowledge needed.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal d2" role="listitem">
+        <button class="faq-trigger" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="faq-trigger__q">Why do I keep seeing 11:11 specifically?</span>
+          <span class="faq-trigger__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-body" role="region">
+          <p class="faq-answer">11:11 is known as the most powerful awakening signal — it represents a gateway where your thoughts carry amplified energy. Seeing it repeatedly is a strong indicator that you are in an active awakening phase. Your full answer is inside the guide.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal" role="listitem">
+        <button class="faq-trigger" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="faq-trigger__q">I see 555, 777, and 1234. Are those covered too?</span>
+          <span class="faq-trigger__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-body" role="region">
+          <p class="faq-answer">Yes. The guide covers all major sequences — single-digit triplicates (111–999), mirror hours like 22:22 and 03:03, and ascending patterns like 1234. Every significant pattern has its own dedicated section with a clear explanation.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal d1" role="listitem">
+        <button class="faq-trigger" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="faq-trigger__q">How is this different from a basic Google search?</span>
+          <span class="faq-trigger__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-body" role="region">
+          <p class="faq-answer">Most online sources give you a surface-level list of meanings. This guide goes deeper — it explains why you're seeing specific numbers right now, how they connect to your current life stage, and gives you a practical ritual to respond to the messages you're receiving.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal d2" role="listitem">
+        <button class="faq-trigger" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="faq-trigger__q">Will I stop seeing numbers after I read this?</span>
+          <span class="faq-trigger__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-body" role="region">
+          <p class="faq-answer">The opposite tends to happen. Awareness amplifies reception — you'll likely see them more. What changes is how you feel when you do: instead of confusion or anxiety, you'll feel clarity, direction, and a quiet sense of being supported by something greater than yourself.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════╗
+     ║  FINAL CTA                          ║
+     ╚══════════════════════════════════════╝ -->
+<section id="final" class="section">
+  <div class="shell final__inner">
+
+    <div class="section-header reveal" style="text-align:center; align-items:center;">
+      <span class="eyebrow">The Universe Is Waiting</span>
+      <h2 class="display display--lg">You've Seen the Signs.<br>Now Read<br><em>the Message.</em></h2>
+      <p class="body-text reveal d1" style="max-width:380px; margin:0 auto 44px;">
+        The fact that you're still here is itself a sign.<br>Don't ignore it.
+      </p>
+    </div>
+
+    <div style="display:flex; flex-direction:column; align-items:center;" class="reveal d2">
+      <a href="#download" class="btn">Get My Free Guide Now</a>
+      <p class="btn-note" style="margin-top:12px;">Free · Instant · No spam</p>
+    </div>
+
+    <div class="hr reveal" style="margin-top:64px; margin-bottom:40px;"></div>
+
+    <p class="reveal" style="text-align:center; font-family:'Cormorant',serif; font-style:italic; font-size:clamp(12px,3vw,14px); letter-spacing:0.4em; color:var(--dim);">
+      11:11 &nbsp;·&nbsp; 22:22 &nbsp;·&nbsp; 333 &nbsp;·&nbsp; 444
+    </p>
+
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════╗
+     ║  FOOTER                             ║
+     ╚══════════════════════════════════════╝ -->
+<footer>
+  <p class="mark">Angel Number Awakening</p>
+  <p>© 2024 · All Rights Reserved</p>
+  <p style="margin-top:8px;">
+    <a href="#">Privacy Policy</a>
+    &nbsp;·&nbsp;
+    <a href="#">Terms of Use</a>
+    &nbsp;·&nbsp;
+    <a href="#">Unsubscribe</a>
+  </p>
+  <p style="margin-top:20px; font-size:10px; max-width:400px; margin-left:auto; margin-right:auto; color:var(--dim); letter-spacing:0.05em; line-height:1.9;">
+    This guide is for spiritual and educational purposes only.<br>Individual experiences and results will vary.
+  </p>
+</footer>
+
+
+<!-- ╔══════════════════════════════════════╗
+     ║  JAVASCRIPT                         ║
+     ╚══════════════════════════════════════╝ -->
+<script>
+  /* ── Scroll reveal ─────────────────── */
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  /* ── FAQ accordion ──────────────────── */
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+    });
+    // Open clicked (unless it was already open)
+    if (!isOpen) {
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+  /* ── Form validation & submit ────────── */
+  function handleSubmit() {
+    const nameEl  = document.getElementById('inp-name');
+    const emailEl = document.getElementById('inp-email');
+    const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let valid = true;
+
+    [nameEl, emailEl].forEach(el => el.classList.remove('error'));
+
+    if (!nameEl.value.trim()) {
+      nameEl.classList.add('error');
+      nameEl.focus();
+      valid = false;
+    }
+    if (!emailRe.test(emailEl.value.trim())) {
+      emailEl.classList.add('error');
+      if (valid) emailEl.focus();
+      valid = false;
+    }
+
+    if (!valid) return;
+
+    // ── Replace with your actual form handler, e.g. Mailchimp / ConvertKit ──
+    // fetch('/api/subscribe', { method:'POST', body: JSON.stringify({ name, email }) });
+
+    const container = document.getElementById('form-container');
+    const success   = document.getElementById('success');
+    container.style.transition = 'opacity 0.35s';
+    container.style.opacity = '0';
+    setTimeout(() => {
+      container.style.display = 'none';
+      success.style.display = 'block';
+    }, 350);
+  }
+
+  /* Allow Enter key to submit form */
+  document.getElementById('inp-email').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') handleSubmit();
+  });
+
+  /* ── Subtle tab-title pulse ─────────── */
+  const titles = [
+    'Angel Number Awakening — Free Guide',
+    '11:11 — You Saw It Again.',
+    'The Universe Is Speaking…',
+    'Angel Number Awakening — Free Guide',
+  ];
+  let ti = 0;
+  setInterval(() => {
+    ti = (ti + 1) % titles.length;
+    document.title = titles[ti];
+  }, 6000);
+</script>
+
+</body>
+</html>
